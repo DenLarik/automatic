@@ -11,27 +11,7 @@
     <packaging>nbm</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>openprj-lib</name>
-        
-    <!--build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>nbm-maven-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <useOSGiDependencies>true</useOSGiDependencies>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <useDefaultManifestFile>true</useDefaultManifestFile>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build-->
-    
+       
     <dependencies>
         <dependency>
             <groupId>org.netbeans.api</groupId>
@@ -42,37 +22,42 @@
         <dependency>
             <groupId>ant</groupId>
             <artifactId>ant</artifactId>
-            <version>1.6.5</version>
+            <version>1.7.0</version>
         </dependency>
         <dependency>
             <groupId>bsf</groupId>
             <artifactId>bsf</artifactId>
-            <version>2.3.0-rc1</version>
+            <version>2.4.0</version>
         </dependency>
         <dependency>
             <groupId>bsh</groupId>
             <artifactId>bsh</artifactId>
-            <version>1.3.0</version>
+            <version>2.0b4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
         </dependency>
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
-            <version>1.8.2</version>
+            <version>1.9.3</version>
         </dependency>
         <dependency>
             <groupId>commons-cli</groupId>
             <artifactId>commons-cli</artifactId>
-            <version>1.2</version>
+            <version>1.4</version>
         </dependency>
         <dependency>
             <groupId>commons-digester</groupId>
             <artifactId>commons-digester</artifactId>
-            <version>2.0</version>
+            <version>2.1</version>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
-            <version>2.4</version>
+            <version>2.6</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
@@ -82,7 +67,7 @@
         <dependency>
             <groupId>commons-pool</groupId>
             <artifactId>commons-pool</artifactId>
-            <version>1.5.4</version>
+            <version>1.6</version>
         </dependency>
         <dependency>
             <groupId>itext</groupId>
@@ -100,15 +85,15 @@
                 </exclusion>
             </exclusions>
         </dependency>
-         <dependency>
-            <groupId>activemq</groupId>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
-            <version>20050407</version>
+            <version>2.3.0</version>
         </dependency>
         <dependency>
-            <groupId>activemq</groupId>
+            <groupId>javax.xml</groupId>
             <artifactId>jaxb-impl</artifactId>
-            <version>20050407</version>
+            <version>2.1</version>
         </dependency>
         <dependency>
             <groupId>javax.xml</groupId>
@@ -128,7 +113,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.7</version>
+            <version>4.12</version>
         </dependency>
         <dependency>
             <groupId>javax.xml</groupId>
@@ -143,7 +128,7 @@
         <dependency>
             <groupId>xalan</groupId>
             <artifactId>xalan</artifactId>
-            <version>2.7.1</version>
+            <version>2.7.2</version>
         </dependency>
         <dependency>
             <groupId>xsdlib</groupId>
@@ -206,7 +191,7 @@
             <artifactId>xstream</artifactId>
             <version>1.1.1</version>
         </dependency>
-       <dependency>
+        <dependency>
             <groupId>oogis.ext.client</groupId>
             <artifactId>openprj-build</artifactId>
             <version>1.4</version>
@@ -228,137 +213,26 @@
         </dependency>        
     </dependencies>
     
-<build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
+                <extensions>true</extensions>
                 <configuration>
-                    <publicPackages>
-                        <publicPackage>org.apache.commons.cli</publicPackage>
-                        <publicPackage>org.apache.commons.digester</publicPackage>
-                        <publicPackage>org.xml.sax</publicPackage>
-                        <publicPackage>org.w3c.dom</publicPackage>
-                        <publicPackage>org.apache.commons.lang</publicPackage>
-                        <publicPackage>junit.framework</publicPackage>
-                        <publicPackage>org.apache.commons.cli</publicPackage>
-                        <publicPackage> org.apache.bsf.util</publicPackage>
-                        <publicPackage>javax.xml.parsers</publicPackage>
-                        <publicPackage>org.xml.sax</publicPackage>
-                        <publicPackage>javax.xml.transform.dom</publicPackage>
-                        <publicPackage> junit.textui</publicPackage>
-                        <publicPackage>org.xml.sax.ext</publicPackage>
-                        <publicPackage>org.apache.commons.beanutils</publicPackage>
-                        <publicPackage>javax.xml.transform</publicPackage>
-                        <publicPackage>org.apache.commons.lang</publicPackage>
-                        <publicPackage>org.apache.commons.collections</publicPackage>
-                        <publicPackage>org.xml.sax.helpers</publicPackage>
-                        <publicPackage>org.apache.commons.pool.impl</publicPackage>
-                        <publicPackage>org.apache.commons.pool</publicPackage>
-                        <publicPackage>org.apache.commons.lang.builder</publicPackage>
-                        <publicPackage>org.apache.bsf</publicPackage>
-                        <publicPackage>com.projity.contrib</publicPackage>
-                        <publicPackage>org.apache.commons.collections.functors</publicPackage>
-                        <publicPackage>org.apache.commons.lang.time</publicPackage>
-                        <publicPackage>org.apache.commons.collections.functors</publicPackage>
-                        <publicPackage>org.apache.commons.collections.map</publicPackage>
-                        <publicPackage>org.apache.commons.collections.bidimap</publicPackage>
-                        <publicPackage>javax.xml.transform.sax</publicPackage>
-                        <publicPackage>org.apache.commons.beanutils.converters</publicPackage>
-                        <publicPackage>com.thoughtworks.xstream</publicPackage>
-                        <publicPackage>org.apache.commons.beanutils.converters</publicPackage>
-                        <publicPackage>com.projity.contrib.util</publicPackage>
-                        <publicPackage>org.apache.commons.collections.comparators</publicPackage>
-                        <publicPackage>javax.xml.transform.stream</publicPackage>
-                        <publicPackage>org.jdesktop.swing.calendar</publicPackage>
-                        <publicPackage>net.sf.jasperreports.engine</publicPackage>
-                        <publicPackage>org.jfree.chart.axis</publicPackage>
-                        <publicPackage>org.jfree.chart</publicPackage>
-                        <publicPackage>com.projity.contrib.calendar</publicPackage>
-                        <publicPackage>net.sf.jasperreports.engine</publicPackage>
-                        <publicPackage>org.jfree.chart</publicPackage>
-                        <publicPackage>org.jfree.chart.plot</publicPackage>
-                        <publicPackage>org.jfree.chart.urls</publicPackage>
-                        <publicPackage>org.jfree.chart.labels</publicPackage>
-                        <publicPackage>com.projity.reports.adapter</publicPackage>
-                        <publicPackage>com.jgoodies.forms.layout</publicPackage>
-                        <publicPackage>com.projity.server.data</publicPackage>
-                        <publicPackage>org.jfree.chart.plot</publicPackage>
-                        <publicPackage>com.jgoodies.forms.factories</publicPackage>
-                        <publicPackage>com.l2fprod.common.swing.tips</publicPackage>
-                        <publicPackage>org.jfree.chart.plot</publicPackage>
-                        <publicPackage>org.jfree.data.xy</publicPackage>
-                        <publicPackage>org.apache.commons.collections.iterators</publicPackage>
-                        <publicPackage>org.jfree.chart.renderer.xy</publicPackage>
-                        <publicPackage>apple.dts.samplecode.osxadapter</publicPackage>
-                        <publicPackage> net.sf.nachocalendar.table</publicPackage>
-                        <publicPackage>com.jgoodies.forms.builder</publicPackage>
-                        <publicPackage>com.l2fprod.common.swing</publicPackage>
-                        <publicPackage>org.jfree.ui</publicPackage>
-                        <publicPackage>net.sf.nachocalendar.components</publicPackage>
-                        <publicPackage>net.sf.nachocalendar</publicPackage>
-                        <publicPackage>org.jfree.ui</publicPackage>
-                        <publicPackage>apple.dts.samplecode.osxadapter</publicPackage> 
-                        <publicPackage>org.apache.tools.*</publicPackage>
-                        <publicPackage>org.apache.bfs.*</publicPackage>
-                        <publicPackage>org.apache.taglibs.*</publicPackage>
-                        <publicPackage>bfs.*</publicPackage>
-                        <publicPackage>org.apache.commons.*</publicPackage>
-                        <publicPackage>org.apache.taglibs.*</publicPackage>
-                        <publicPackage>org.apache.commons.collections.*</publicPackage>
-                        <publicPackage>com.jgoodies.forms.*</publicPackage>
-                        <publicPackage>com.lowagie.*</publicPackage>
-                        <publicPackage>org.apache.poi.*</publicPackage>
-                        <publicPackage>net.fs.jasperreports.*</publicPackage>
-                        <publicPackage>javax.xml.*</publicPackage>
-                        <publicPackage>com.sun.xml.bind.*</publicPackage>
-                        <publicPackage>com.sun.msv.*</publicPackage>
-                        <publicPackage>jp.gr.xml.*</publicPackage>
-                        <publicPackage>org.iso_relax.*</publicPackage>
-                        <publicPackage>com.sun.tools.*</publicPackage>
-                        <publicPackage>com.sun.xml.*</publicPackage>
-                        <publicPackage>org.apache.*</publicPackage>
-                        <publicPackage>org.jfree.*</publicPackage>
-                        <publicPackage>org.jdesktop.*</publicPackage>
-                        <publicPackage>org.eclipse.jdt.*</publicPackage>
-                        <publicPackage>toolbarButtonGraphics.*</publicPackage>
-                        <publicPackage>org.junit.*</publicPackage>
-                        <publicPackage>org.hamcrest.*</publicPackage>
-                        <publicPackage>com.l2fprod.common.*</publicPackage>
-                        <publicPackage>com.projity.*</publicPackage>
-                        <publicPackage>net.sf.*</publicPackage>
-                        <publicPackage>org.relaxng.*</publicPackage>
-                        <publicPackage>org.apache.commons.*</publicPackage>
-                        <publicPackage>com.sun.*</publicPackage>
-                        <publicPackage>com.thoughtworks.*</publicPackage>
-                        <publicPackage>org.w3c.*</publicPackage>
-                        <publicPackage>org.xml.*</publicPackage>
-                    </publicPackages>
+                    <useOSGiDependencies>true</useOSGiDependencies>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3</version>
                 <configuration>
-                    <!-- to have the jar plugin pickup the nbm generated manifest -->
-                    <useDefaultManifestFile>true</useDefaultManifestFile>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.0.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <archive>
+                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
-    </build>    
-    
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    </build>  
+
 </project>
